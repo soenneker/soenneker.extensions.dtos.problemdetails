@@ -42,6 +42,6 @@
 
     <ItemGroup>
       <PackageReference Include="Soenneker.Dtos.ProblemDetails" Version="4.0.413" />
-      <PackageReference Include="Soenneker.Dtos.Results.Operation" Version="4.0.20" />
+      <PackageReference Include="Soenneker.Dtos.Results.Operation" Version="4.0.21" />
     </ItemGroup>
 </Project>
