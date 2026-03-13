@@ -9,7 +9,7 @@
 
     <PropertyGroup>
         <Description>An extension class for ProblemDetails DTOs</Description>
-        <Version Condition="'$(BUILD_VERSION)' == ''">3.0.0</Version>
+        <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Extensions.Dtos.ProblemDetails</AssemblyName>
         <PackageId>Soenneker.Extensions.Dtos.ProblemDetails</PackageId>
