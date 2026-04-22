@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.Extensions.Dtos.ProblemDetails.Tests;
 
 public sealed class ProblemDetailsDtosExtensionTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
