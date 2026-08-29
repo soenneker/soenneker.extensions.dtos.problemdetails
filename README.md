@@ -4,7 +4,7 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.extensions.dtos.problemdetails/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.extensions.dtos.problemdetails/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.Dtos.ProblemDetails
-An extension class for ProblemDetails DTOs.
+Wraps a `ProblemDetailsDto` in an `OperationResult` and resolves the HTTP status code in one place.
 
 ## Installation
 
@@ -12,15 +12,26 @@ An extension class for ProblemDetails DTOs.
 dotnet add package Soenneker.Extensions.Dtos.ProblemDetails
 ```
 
-## Quick start
+## Usage
 
 ```csharp
 using Soenneker.Extensions.Dtos.ProblemDetails;
 
-// Given an existing ProblemDetailsDto named problem:
-var result = problem.ToOperationResult();
+var problem = new ProblemDetailsDto
+{
+    Status = 404,
+    Title = "Customer not found"
+};
+
+OperationResult result = problem.ToOperationResult();
+// result.Problem is the same problem instance
+// result.StatusCode == 404
 ```
 
-## Common operations
+Status selection follows a clear precedence:
 
-- `ToOperationResult()` - Creates a new OperationResult instance from the specified problem details and optional HTTP status code.
+1. An explicit `HttpStatusCode` argument wins.
+2. Otherwise `problem.Status` is used.
+3. If neither is present, the result uses `500`.
+
+The problem object is assigned directly rather than cloned. The source must be non-null.
