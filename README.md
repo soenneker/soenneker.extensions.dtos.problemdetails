@@ -4,10 +4,23 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.extensions.dtos.problemdetails/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.extensions.dtos.problemdetails/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.Dtos.ProblemDetails
-### An extension class for ProblemDetails DTOs
+An extension class for ProblemDetails DTOs.
 
 ## Installation
 
-```
+```bash
 dotnet add package Soenneker.Extensions.Dtos.ProblemDetails
 ```
+
+## Quick start
+
+```csharp
+using Soenneker.Extensions.Dtos.ProblemDetails;
+
+// Given an existing ProblemDetailsDto named problem:
+var result = problem.ToOperationResult();
+```
+
+## Common operations
+
+- `ToOperationResult()` - Creates a new OperationResult instance from the specified problem details and optional HTTP status code.
