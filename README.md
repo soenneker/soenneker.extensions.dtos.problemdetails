@@ -4,7 +4,7 @@
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.extensions.dtos.problemdetails/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.extensions.dtos.problemdetails/actions/workflows/codeql.yml)
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.Dtos.ProblemDetails
-Wraps a `ProblemDetailsDto` in an `OperationResult` and resolves the HTTP status code in one place.
+Extension methods for converting and enriching `ProblemDetailsDto` error responses for use in application result pipelines.
 
 ## Installation
 
